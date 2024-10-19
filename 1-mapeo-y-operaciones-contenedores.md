@@ -52,7 +52,7 @@ El argumento -l junto con el comando ls proporciona una lista detallada de los a
 ```
 docker exec jenkins ls -l
 ```
-![img](Comando/dockerJenkinsComando.png)
+![comando](img/dockerJenkinsComando.png)
 ---
 ### Para ejecutar un shell interactivo en un contenedor de Docker especificado.
 El comando **docker exec** te permite acceder a la sesión shell de un contenedor en ejecución, estarás dentro del contenedor y podrás ejecutar comandos como si estuvieras en una terminal normal. 
@@ -129,7 +129,7 @@ docker logs -n <cantidad de líneas> <nombre o id del contenedor>
 docker logs -n 10 jenkins
 ```
 -t: para incluir la fecha y la hora
-![logs](img/dockerLogs.png)
+![logs](img/dockerlogs.png)
 
 
 
