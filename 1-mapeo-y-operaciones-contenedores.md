@@ -15,9 +15,11 @@ docker run -P -d --name <nombre contenedor> <nombre imagen>:<tag>
 No puedes mapear puertos a un contenedor existente directamente después de su creación con Docker. El mapeo de puertos debe especificarse en el momento de crear y ejecutar el contenedor.
 
 ### Crear contenedor de Jenkins puertos contenedor: 8080 (interface web) y 50000 (comunicación entre nodos) imagen: jenkins/jenkins:alpine3.18-jdk11
-# COMPLETAR
+docker run -d --name jenkins -p 8080:8080 -p 50000:50000 jenkins/jenkins:alpine3.18-jdk11
 
-# COLOCAR UNA CAPTURA DE PANTALLA  DEL ACCESO http://localhost:8080
+
+# PANTALLA  DEL ACCESO http://localhost:8080
+![img](img/jenkinsLocalHost.png)
 
 ### ¿Cómo obtener la contraseña solicitada?
 Para obtener la contraseña solicitada es necesario ingresar al contenedor.
@@ -30,13 +32,28 @@ Para obtener la contraseña solicitada es necesario ingresar al contenedor.
 ```
 docker exec <nombre contenedor> <comando> <argumentos opcionales>
 ```
-# COMPLETAR
-### ¿Para qué se usa el comando ls?
-### ¿Para qué sirve el argumento -l junto al comando ls?
-### Usar el contenedor de jenkins creado previamente y ejecutar el comando ls con el argumento -l
-# COMPLETAR
-# COLOCAR UNA CAPTURA DE PANTALLA
+```
+docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+```
+---
 
+### ¿Para qué se usa el comando ls?
+El comando ls se utiliza para listar archivos y directorios en una ubicación específica de un sistema de archivos en Linux/Unix, o dentro de un contenedor Docker que ejecute un sistema similar. 
+### ¿Para qué sirve el argumento -l junto al comando ls?
+El argumento -l junto con el comando ls proporciona una lista detallada de los archivos y directorios. La salida incluye:
+  - Permisos del archivo/directorio (como rwxr-xr-x).
+  - Número de enlaces duros.
+  - Propietario del archivo.
+  - Grupo del archivo.
+  - Tamaño del archivo en bytes.
+  - Fecha y hora de la última modificación.
+  - Nombre del archivo o directorio.
+### Usar el contenedor de jenkins creado previamente y ejecutar el comando ls con el argumento -l
+```
+docker exec jenkins ls -l
+```
+![img](Comando/dockerJenkinsComando.png)
+---
 ### Para ejecutar un shell interactivo en un contenedor de Docker especificado.
 El comando **docker exec** te permite acceder a la sesión shell de un contenedor en ejecución, estarás dentro del contenedor y podrás ejecutar comandos como si estuvieras en una terminal normal. 
 Para saber qué comando utilizar para abrir una terminal dentro de un contenedor, es útil conocer la imagen base del contenedor, ya que diferentes imágenes pueden usar diferentes shells o comandos para abrir una terminal. Puedes verificar la documentación de la imagen del contenedor en Docker Hub o en el repositorio de la imagen para obtener información específica sobre cómo abrir una terminal en esa imagen.
@@ -69,7 +86,7 @@ Ejecutar
 ```
 whoami
 ```
-# COLOCAR UNA CAPTURA DE PANTALLA
+![shell](img/dockerShelli.png)
 
 **Si se visualiza el mensaje command not found, considerar**
 El problema se debe a que no se ha asignado un terminal de salida al contenedor al ejecutar el comando. Cuando usas docker exec -i jenkins-server /bin/bash en Windows, el comando se ejecuta pero no hay un terminal asignado para mostrar la salida del comando ls.
@@ -88,10 +105,17 @@ docker exec -it <nombre contenedor> <programa o comando>
 ```
 
 ### Ahora puedes acceder al contenedor de jenkins y obtener la contraseña ubicada en /var/jenkins_home/secrets/initialAdminPassword
-
-# COMPLETAR
+1. Acceder al contenedor
+```
+docker exec -it jenkins bash
+```
+2. Ejecutar:
+```
+cat /var/jenkins_home/secrets/initialAdminPassword
+```
 
 ### Colocar una captura de pantalla de la ventana que aparece después de colocar la contraseña.
+![password](img/dockerComandoContrasenia.png)
 
 **Para este punto no es necesario continuar con la instalación de Jenkins**
 
@@ -101,8 +125,11 @@ docker exec -it <nombre contenedor> <programa o comando>
 ```
 docker logs -n <cantidad de líneas> <nombre o id del contenedor> 
 ```
+```
+docker logs -n 10 jenkins
+```
 -t: para incluir la fecha y la hora
-
+![logs](img/dockerLogs.png)
 
 
 
