@@ -11,7 +11,6 @@ docker run -d --name Cpostgres -e PGADMIN_DEFAULT_EMAIL=admin@example.com -e PGA
 
 ```
 ![Imagen](img/dockerPgadmin.png)
-![Imagen](img/dockerLoginPgadmin.png)
 
 La figura presenta el esquema creado en donde los puertos son:
 - a: (completar con el valor)
@@ -23,6 +22,7 @@ La figura presenta el esquema creado en donde los puertos son:
 ## Desde el cliente
 ### Acceder desde el cliente al servidor postgres creado.
 ![Imagen](img/dockerLocalHostPgadmin.png)
+![Imagen](img/dockerLoginPgadmin.png)
 
 ### Crear la base de datos info, y dentro de esa base la tabla personas, con id (serial) y nombre (varchar), agregar un par de registros en la tabla, obligatorio incluir su nombre.
 ```
