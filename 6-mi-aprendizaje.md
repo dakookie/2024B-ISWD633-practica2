@@ -1,3 +1,5 @@
 # COMPLETAR  
 Comparando sus conocimientos antes de hacer la práctica con sus conocimientos después de hacer la tarea, explicar los principales aprendizajes logrados para beneficio de su formación profesional.  
 Si solucionó un problema presentado al realizar la práctica también se debe documentar.
+---
+Durante la práctica, logré afianzar mis conocimientos en la gestión de contenedores Docker y su interconexión, en especial en la configuración de servicios como WordPress y MySQL. Aprendí la importancia de las redes en Docker para asegurar la comunicación entre contenedores y cómo las variables de entorno correctamente configuradas son clave para el funcionamiento de aplicaciones dependientes de bases de datos. Un problema que resolví fue el error de conexión entre WordPress y MySQL, el cual estaba causado por una mala configuración en la variable WORDPRESS_DB_HOST, al corregir esta variable y asegurar que ambos contenedores estuvieran en la misma red, conseguí establecer la conexión correctamente.
