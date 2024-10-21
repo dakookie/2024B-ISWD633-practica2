@@ -41,7 +41,7 @@ Ingresar a: http://localhost:9300/
 recordar que a es el puerto que usó para el mapeo con wordpress
 
 ### ¿Qué ha sucedido, qué puede observar?
-# COMPLETAR
+La página de wordpress se mantuvo con las ediciones que había realizado anteriormente, puede ser porque la base de datos mysql aún mantengía la información del sitio web, ya que el contenedor mysql sigue ejecutándose y conserva los datos.
 
 
 
