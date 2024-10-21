@@ -50,7 +50,7 @@ docker network ls
 
 # COLOCAR UNA CAPTURA DE LAS REDES EXISTENTES CREADAS
 
-![Imagen](img/dockerRedes.png)
+![Imagen](img/dockerRedesCreadas.png)
 
 # COLOCAR UNA(S) CAPTURAS(S) DE LOS CONTENEDORES CREADOS EN DONDE SE EVIDENCIE A QUÉ RED ESTÁN VINCULADOS
 # Contenedores net-curso01
